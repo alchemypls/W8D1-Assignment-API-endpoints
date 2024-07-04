@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <style href="static/styles.css"></style>
+</head>
+<body>
+    <div class="weather-box">
+        <h1>Weather outlook</h1>
+            <ul class="weather-output">
+                {% for items in parsed %}
+                <li>
+                    {{ items }}
+                </li>
+
+            </ul>
+            {% endfor %}
+        <form action="{{ url_for('add_city')}}" method="post"weather-input">
+            <input type="text" name="content" placeholder="Enter City Here: " required>
+            <button type="sumbit"> Find Weather</button>
+        </form>
+    </div>
+    <a href="https://www.weatherapi.com/" title="Free Weather API"><img src='//cdn.weatherapi.com/v4/images/weatherapi_logo.png' alt="Weather data by WeatherAPI.com" border="0"></a>
+</body>
+</html>
